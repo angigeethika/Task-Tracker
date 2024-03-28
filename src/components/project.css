@@ -1,0 +1,88 @@
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  height: 45px;
+  background: #000000;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+.input {
+  width: 75%; /* Adjusted width for responsiveness */
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 40px;
+  font-size: 16px;
+  color: black;
+  padding: 20px 45px 20px 20px;
+}
+.outer-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  background: transparent;
+  border: 2px solid #000000;
+  backdrop-filter: blur(1.5px);
+  box-shadow: 0 0 10px black;
+  color: black;
+  border-radius: 10px;
+  padding: 0; /* Remove padding */
+  margin: 30px; /* Add margin to compensate for removed padding */
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+
+
+
+.wrapper {
+  width: 70%; 
+  max-width: 600px; 
+  margin: 0 auto; 
+  background: transparent;
+  border: 2px solid #000000;
+  backdrop-filter: blur(1.5px);
+  box-shadow: 0 0 10px black;
+  color: black;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin-bottom: 50px; 
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .container, .wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    font-size: 0.9rem; 
+}
+}
+h1,p{
+  text-align: center;
+}

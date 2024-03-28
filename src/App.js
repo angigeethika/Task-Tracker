@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 
 function App() {
+  const [tasks, setTasks] = useState([
+    
+  ]);
+
+  // Function to add a new task
+  const addTask = (text) => {
+    const newTask = {
+      id: Math.floor(Math.random() * 10000) + 1,
+      text: text,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
+  // Function to delete a task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='outer-container'>
+    <div className="container">
+      <Header />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        <p>No tasks to show</p>
+      )}
+      <AddTask onAdd={addTask} />
+    </div>
     </div>
   );
 }
